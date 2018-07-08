@@ -1,0 +1,25 @@
+1)
+create all tables through notepads
+CIFS\tables.txt
+EmployeeAdmin\emp_tables.txt
+
+
+2)
+create DSN 'test' for oracle 'scott' user
+
+3)
+copy the root folders(EmployeeAdmin & CIFS) into 
+d:\tomcat4\webapps\
+
+
+4)
+starting the server
+ GOTO d:\tomcat4\bin\>set JAVA_HOME=D:\jdk1.3
+      d:\tomcat4\bin\>set J2EE_HOME=D:\j2sdkee1.3
+      d:\tomcat4\bin\>catalina run
+
+5)
+
+open broser(IE)
+type http://localhost:8080/CIFS
+type http://localhost:8080/EmployeeAdmin

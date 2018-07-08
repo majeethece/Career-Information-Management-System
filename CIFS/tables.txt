@@ -1,0 +1,84 @@
+conn system/manager
+/
+
+create user cis identified by cis
+/
+
+grant connect,resource to cis
+/
+
+conn cis/cis
+/
+
+show user
+/
+
+
+
+drop table Register
+/
+
+create table Register(username varchar2(8) primary key,password varchar2(8) not null,
+fname varchar2(20),lname varchar2(30),email varchar2(30),mobile varchar2(15),
+degree varchar2(20),spcl varchar2(20))
+/
+
+drop table Resume
+/
+
+create table Resume(username varchar2(8) references Register,restitle varchar2(100),
+resowner varchar2(50),address varchar2(100),email varchar2(50),phone varchar2(50),
+mobile varchar2(50),degree varchar2(25),othersdeg varchar2(50),degper varchar2(10),
+pg varchar2(25),otherpg varchar2(50),pgper varchar2(20),skills varchar2(1000),
+workexp varchar2(500),projone varchar2(1000),projtwo varchar2(1000),refference varchar2(1000))
+/
+
+
+
+drop table Result
+/
+
+create table Result(username varchar2(8) references Register,
+TESTLEVEL VARCHAR2(20) REFERENCES LEVELS(TESTLEVEL),result number(3))
+/
+
+
+1)Register
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -------------
+
+ USERNAME                                  NOT NULL VARCHAR2(8)
+ PASSWORD                                  NOT NULL VARCHAR2(8)
+ FNAME                                              VARCHAR2(20)
+ LNAME                                              VARCHAR2(30)
+ EMAIL                                              VARCHAR2(30)
+ MOBILE                                             VARCHAR2(15)
+ DEGREE                                             VARCHAR2(20)
+ SPCL                                               VARCHAR2(20)
+
+2)Resume
+
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- -----------------
+
+ USERNAME                                  VARCHAR2(8)
+ RESTITLE                                           VARCHAR2(100)
+ RESOWNER                                           VARCHAR2(50)
+ ADDRESS                                            VARCHAR2(100)
+ EMAIL                                              VARCHAR2(50)
+ PHONE                                              VARCHAR2(50)
+ MOBILE                                             VARCHAR2(50)
+ DEGREE                                             VARCHAR2(25)
+ OTHERSDEG                                          VARCHAR2(50)
+ DEGPER                                             VARCHAR2(10)
+ PG                                                 VARCHAR2(25)
+ OTHERPG                                            VARCHAR2(50)
+ PGPER                                              VARCHAR2(20)
+ SKILLS                                             VARCHAR2(1000)
+ WORKEXP                                            VARCHAR2(500)
+ PROJONE                                            VARCHAR2(1000)
+ PROJTWO                                            VARCHAR2(1000)
+ REFFERENCE                                         VARCHAR2(1000)
+

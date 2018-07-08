@@ -1,0 +1,33 @@
+<html>
+<head>
+<title></title>
+<script>
+var i = 0;
+var j = 0;
+var title = "Resume Maintenance @ http://www.coreprosoft.com";
+var titlelen = title.length;
+var k;
+function scrollControl() {
+   scrollTitle();
+   if(j < titlelen){
+    clearTimeout(k);
+   }
+   j++;
+   k=setTimeout("scrollControl();",5)
+}
+
+function scrollTitle() {
+    var s = title.substring(0 ,i);
+    document.title = s;
+    i++;
+}
+scrollControl();
+</script>
+<body>
+<div align="center">
+<IMG src="./images/mylogo.gif" width="250" height="75" align="center">
+<IMG src="./images/edulogo.gif" width="250" height="75" align="center">
+<IMG src="./images/circlelogo.gif" width="80" height="80" align="center">
+<marquee bgcolor=pink> Career Information Maintenance CorePro Soft Sol  Pvt.Ltd</marquee>
+</body>
+</head>
